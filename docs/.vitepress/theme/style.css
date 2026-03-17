@@ -1,0 +1,60 @@
+/* Coin Sniffer — custom VitePress theme overrides */
+
+:root {
+  --vp-c-brand-1: #00d4aa;
+  --vp-c-brand-2: #00bfa8;
+  --vp-c-brand-3: #009e8c;
+  --vp-c-brand-soft: rgba(0, 212, 170, 0.12);
+
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-2);
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: #0a0a0f;
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #00d4aa 0%, #0099ff 100%);
+  --vp-home-hero-image-background-image: radial-gradient(ellipse, rgba(0, 212, 170, 0.18) 0%, transparent 60%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+.dark {
+  --vp-c-bg: #0a0a0f;
+  --vp-c-bg-soft: #111118;
+  --vp-c-bg-mute: #17171f;
+  --vp-c-divider: #2a2a35;
+  --vp-c-text-1: #e8e8f0;
+  --vp-c-text-2: #a8a8c0;
+}
+
+/* Badge colours for alert types */
+.badge-bull {
+  display: inline-block;
+  background: rgba(0, 212, 170, 0.15);
+  color: #00d4aa;
+  border: 1px solid rgba(0, 212, 170, 0.3);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 0.82em;
+  font-weight: 600;
+}
+
+.badge-bear {
+  display: inline-block;
+  background: rgba(255, 80, 80, 0.15);
+  color: #ff5050;
+  border: 1px solid rgba(255, 80, 80, 0.3);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 0.82em;
+  font-weight: 600;
+}
+
+/* Condition checklist tables */
+.vp-doc table td:first-child code {
+  white-space: nowrap;
+}
+
+/* Hero tweaks */
+.VPHero .tagline {
+  font-size: 1.15rem;
+}
