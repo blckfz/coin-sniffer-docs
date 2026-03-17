@@ -2,7 +2,7 @@
 
 **Script name on TradingView**: "Coin-Sniffer — Scout"
 
-Early momentum detection — fires when the current 5m move is disproportionately large relative to the 15m move, indicating acceleration is happening *right now*.
+Early momentum detection — fires when the 5m move is disproportionately large relative to the 15m move, indicating acceleration is happening *right now*. Typically fires before a Surge signal would trigger.
 
 ::: warning
 Must be applied to a **1-minute chart**.
@@ -10,29 +10,22 @@ Must be applied to a **1-minute chart**.
 
 ## How signals are generated
 
-### Bull signal — all 4 conditions must pass
+**Bull**: both the 5m and 15m windows are positive, and the current 5-minute window accounts for an outsized share of both the 15m price move and the 15m volume. This means momentum is accelerating, not decelerating.
 
-| # | Condition | Default |
-|---|-----------|---------|
-| 1 | 5m change > threshold | +1.0% |
-| 2 | 15m change > threshold | +1.0% |
-| 3 | Acceleration: ratio × (5m change) > 15m change | 3× (last 5m ≥ 33% of the 15m move) |
-| 4 | Volume: ratio × (5m volume) > 15m volume | 2× (last 5m ≥ 50% of 15m volume) |
-
-**Bear**: conditions 1 & 2 are < −1.0%. Conditions 3 & 4 use absolute values.
+**Bear**: same structure with both windows negative.
 
 ## Input parameters
 
-| Input | Default | Description |
-|-------|---------|-------------|
-| Bull Change Threshold (%) | 1.0 | Minimum 5m and 15m positive changes |
-| Bear Change Threshold (%) | −1.0 | Minimum 5m and 15m negative changes |
-| Acceleration Ratio | 3 | How many times the 5m change must multiply to exceed 15m change |
-| Volume Ratio | 2 | How many times the 5m volume must multiply to exceed 15m volume |
-| Cooldown (bars) | 5 | Bars between same-type signals (1 bar = 1 minute) |
-| Show Debug Table | Off | Display current condition values in chart corner |
+| Input | Description |
+|-------|-------------|
+| Bull Change Threshold (%) | Minimum positive change required on both the 5m and 15m windows |
+| Bear Change Threshold (%) | Minimum negative change required on both windows |
+| Acceleration Ratio | Controls how dominant the 5m move must be relative to the 15m move |
+| Volume Ratio | Controls how much of the 15m volume must be concentrated in the current 5m |
+| Cooldown (bars) | Minimum bars between same-type signals on the same chart |
+| Show Debug Table | Displays live condition values in a chart corner — useful when tuning thresholds |
 
-## Display group
+### Display group
 
 | Input | Default |
 |-------|---------|
@@ -43,15 +36,11 @@ Must be applied to a **1-minute chart**.
 
 ## Tuning the acceleration ratio
 
-The default **3× acceleration ratio** means the 5-minute move must be at least 1/3 of the entire 15-minute move. This is a moderately selective threshold.
+The acceleration ratio controls how dominant the recent 5m move must be relative to the full 15m window.
 
-- **Lower it (e.g., 2×)**: More signals, fires earlier in moves, higher false-positive rate.
-- **Raise it (e.g., 4–5×)**: Fewer but sharper signals — the 5m must be an unusually large fraction of the 15m.
-
-## Cooldown
-
-5 bars (5 minutes) between same-type signals.
+- **Lower the ratio**: More signals, fires earlier in moves, higher false-positive rate.
+- **Raise the ratio**: Fewer, sharper signals — only fires when the current 5m represents an unusually large fraction of the 15m move.
 
 ## Scout vs Surge
 
-Scout is a **leading indicator** — it fires when acceleration begins, before a full Surge condition would pass. Scout + subsequent Surge on the same symbol is a high-conviction sequence.
+Scout is a **leading indicator** — it fires when acceleration begins, before a full Surge condition is met. A Scout followed by a Surge on the same symbol is a high-conviction sequence.
