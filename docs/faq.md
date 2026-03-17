@@ -62,7 +62,7 @@ A Raid is a stop hunt / liquidity sweep pattern. It fires when price has moved n
 
 ### What is a "Whale" alert?
 
-A Whale alert fires when the 5-minute volume is 5× the average 5-minute volume for that hour — **and** price barely moved (<0.3%). This means something abnormally large was transacted without significantly moving the price, which is characteristic of large-player accumulation or distribution.
+A Whale alert fires when the 5-minute volume is abnormally large compared to the recent baseline **and** price barely moved during that window. This combination — high volume, minimal price impact — is the footprint of large-player accumulation or distribution happening quietly.
 
 ---
 

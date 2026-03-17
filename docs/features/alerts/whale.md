@@ -8,58 +8,45 @@ There are 3 Whale alert types.
 
 ## How whale detection works
 
-The key insight: if a whale is buying or selling a large position, they try *not* to move the price (to avoid slippage). They spread orders across many small trades. The result is abnormally high volume with minimal price impact.
+When a large player buys or sells a significant position, they deliberately avoid moving the price — they spread orders across many small trades to minimise slippage. The result is **abnormally high volume with minimal price impact**: a spike in traded size without a corresponding spike in price movement.
 
-The **whale anomaly** condition:
+Coin Sniffer detects this anomaly by comparing the current 5-minute volume against the recent hourly baseline and checking that the price impact during that window remained small. Only liquid markets with sufficient ongoing volume qualify — this filters out thin pairs where any normal trade would show as anomalous.
 
-| # | Condition | Default |
-|---|-----------|---------|
-| 1 | 5m volume > spike ratio × average 5m volume over last 1h | 5× the hourly average |
-| 2 | Absolute 5m price change < max impact | <0.3% (barely moved) |
-| 3 | 1h volume > floor | >500K USDT (liquid market) |
-| 4 | 5m volume > floor | >200K USDT |
-
-All 4 conditions must pass to detect a whale anomaly. Then the **direction** (accumulation vs distribution) is determined by the 15m trend and RSI.
+Once a whale anomaly is confirmed, the **direction** is classified using the 15-minute trend and momentum indicators:
 
 ---
 
 ## Whale Detector
 
-The base signal — a whale anomaly is confirmed but no strong directional bias is detected yet.
+A whale anomaly is confirmed, but no clear directional bias is present. The 15m trend is flat and momentum indicators are neutral.
 
-**Fires when**: all 4 anomaly conditions pass AND the 15m trend is flat AND RSI is around the midpoint (~50).
-
-Use Whale Detector as an early heads-up: something large is happening, but which way is unclear.
+Use Whale Detector as an early heads-up: something unusually large is happening, but the direction is not yet clear.
 
 ---
 
 ## Whale Accumulation (bullish)
 
-Fires when the whale anomaly is confirmed AND there is a bullish context:
-- 15m trend is positive (price is trending up on the 15m window), **OR**
-- 15m trend is flat AND RSI(14) > 50
+A whale anomaly is confirmed **and** the contextual trend is bullish — either the 15m trend is positive, or momentum indicators lean bullish.
 
-Interpretation: large players are quietly buying while price drifts upward or holds at the midpoint. Bullish bias.
+Interpretation: large players are quietly buying while price drifts upward or consolidates. Bullish bias.
 
 ---
 
 ## Whale Distribution (bearish)
 
-Fires when the whale anomaly is confirmed AND there is a bearish context:
-- 15m trend is negative (price is trending down on the 15m window), **OR**
-- 15m trend is flat AND RSI(14) < 50
+A whale anomaly is confirmed **and** the contextual trend is bearish — either the 15m trend is negative, or momentum indicators lean bearish.
 
-Interpretation: large players are quietly selling into a drift down or midpoint. Bearish bias.
+Interpretation: large players are quietly selling into a drift down or consolidation. Bearish bias.
 
 ---
 
 ## Summary
 
-| Type | Anomaly | Direction |
-|------|---------|-----------|
-| Whale Detector | ✅ | Unclear (flat 15m, RSI ~50) |
-| Whale Accumulation | ✅ | Bullish (15m up or RSI > 50) |
-| Whale Distribution | ✅ | Bearish (15m down or RSI < 50) |
+| Type | Anomaly detected | Directional context |
+|------|-----------------|-------------------|
+| Whale Detector | ✅ | Neutral — direction unclear |
+| Whale Accumulation | ✅ | Bullish |
+| Whale Distribution | ✅ | Bearish |
 
 ::: tip
 Whale alerts are most useful as a **confluence signal** alongside Surge or Scout. A Whale Accumulation alert followed by a Scout Bull is a strong setup: large players positioned first, then momentum began accelerating.

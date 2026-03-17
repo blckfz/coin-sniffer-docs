@@ -1,6 +1,6 @@
 # Surge Alerts
 
-Surge alerts detect **explosive directional momentum** where price is moving strongly across multiple timeframes at the same time, with volume concentrated in the most recent window (proof that the move is happening *right now*, not bleeding out from hours ago).
+Surge alerts detect **explosive directional momentum** where price is moving strongly across multiple timeframes simultaneously, confirmed by volume concentrating in the most recent window. This proves the move is happening *right now*, not bleeding out from earlier in the session.
 
 There are 8 Surge alert types across 3 timeframe groups.
 
@@ -8,99 +8,42 @@ There are 8 Surge alert types across 3 timeframe groups.
 
 ## Surge 5m
 
-Fires on short-term explosive momentum anchored on the 5-minute window.
+Fires on short-term explosive momentum anchored on the 5-minute window. The signal requires the move to be visible across multiple shorter timeframes and backed by a meaningful spike in recent volume — ruling out coins that are simply drifting after an earlier push.
 
-### Bull conditions (all 9 must pass)
+**Bull**: price is surging upward with volume concentrated in the current window.
 
-| # | Condition | Default |
-|---|-----------|---------|
-| 1 | 5m price change > threshold | +0.6% |
-| 2 | 24h price change < safety cap | <15% (not overextended) |
-| 3 | 15m change > 5m change | Cascade up: move is building |
-| 4 | 1h change > 15m change | Cascade continues up |
-| 5 | 5m volume > floor | >100K USDT |
-| 6 | 1h volume > floor | >1M USDT |
-| 7 | 5m volume > 15m volume ÷ 3 | Volume concentrated in last 5m vs last 15m |
-| 8 | 5m volume > 1h volume ÷ 6 | Volume concentrated in last 5m vs last 1h |
-| 9 | 5m volume > 8h volume ÷ 66 | Volume concentrated in last 5m vs last 8h |
-
-**Bear**: identical structure, all price thresholds negated (5m < −0.6%, etc.).
-
-### What volume concentration means
-
-Conditions 7–9 ensure the volume is happening *now*, not just that the coin had a lot of volume at some point in the day. By requiring the current 5m volume to be a proportionally large slice of the 15m/1h/8h totals, the rule filters out coins that moved heavily hours ago and are now drifting.
-
-### Cooldown
-
-15 bars (15 minutes) between same-direction signals per symbol.
+**Bear**: identical structure, all price conditions inverted.
 
 ---
 
 ## Surge 15m
 
-Same cascade logic, anchored on the 15-minute window. Requires a stronger and more sustained move.
+Anchored on the 15-minute window. Requires a stronger and more sustained move — the price action must be consistent across the 15m, 1h, and 8h windows with volume concentrated in the recent period.
 
-### Bull conditions (all 8 must pass)
+**Bull**: sustained upward move with multi-timeframe alignment and volume confirmation.
 
-| # | Condition | Default |
-|---|-----------|---------|
-| 1 | 15m price change > threshold | +1.0% |
-| 2 | 24h change < safety cap | <15% |
-| 3 | 1h change > 15m change | Cascade up |
-| 4 | 8h change > 1h change | Cascade continues |
-| 5 | 15m volume > floor | >400K USDT |
-| 6 | 1h volume > floor | >1M USDT |
-| 7 | 15m volume > 1h volume ÷ 3 | Volume concentrated in last 15m |
-| 8 | 15m volume > 8h volume ÷ 26 | Volume concentrated vs last 8h |
-
-**Bear**: all price thresholds negated.
-
-### Cooldown
-
-30 bars (30 minutes).
+**Bear**: mirror, all conditions inverted.
 
 ---
 
 ## Surge 60m
 
-Detects sustained macro momentum across 1h, 8h, and 24h windows. This is a higher-conviction signal — the move must be building across all three timeframes.
+Detects sustained macro momentum requiring alignment across the 1h, 8h, and 24h windows. Higher conviction than Surge 5m or 15m — the move must be building through every timeframe, with recent hourly volume representing a meaningful portion of the longer-term total.
 
-### Bull conditions — V1 (all 8 must pass)
+**Bull**: the 1h move is strong, fits into a broader 8h trend, and the daily direction continues upward.
 
-| # | Condition | Default |
-|---|-----------|---------|
-| 1 | 1h price change > threshold | +1.6% |
-| 2 | 24h change < safety cap | <15% |
-| 3 | 8h change > 1h change | Cascade: hourly move fits into broader trend |
-| 4 | 24h change > 8h change | Cascade continues to daily |
-| 5 | 1h volume > floor | >500K USDT |
-| 6 | 8h volume > floor | >5M USDT |
-| 7 | 6 × 1h volume > 8h volume | Recent hourly volume is substantial vs 8h total |
-| 8 | 16 × 1h volume > 24h volume | Recent hourly volume is substantial vs daily total |
-
-**Bear**: all price thresholds negated.
+**Bear**: mirror, all conditions inverted.
 
 ### Surge 60m V2
 
-V2 mode adds two extra filters for higher precision:
+V2 adds an extra filter on top of the standard Surge 60m conditions: the coin must be outperforming Bitcoin over the same 1-hour window. This removes coins that are simply rising with the broader market and highlights genuine relative-strength leaders.
 
-| # | Additional condition | Default |
-|---|---------------------|---------|
-| 9 | 24h daily change > 0 | Daily direction must be positive (bull) |
-| 10 | Coin 1h change > BTC 1h change + margin | Coin outperforms Bitcoin by ≥0.5% on the hour |
+**Bull V2**: all Surge 60m bull conditions + coin beats BTC on the 1h.
 
-V2 bear: daily change must be negative AND coin must underperform BTC by the margin.
-
-V2 catches coins with genuine relative strength — coins that are moving up *more than Bitcoin* during the same window, which filters out coins that are just rising with the index.
-
-### Cooldown
-
-60 bars (1 hour).
+**Bear V2**: all Surge 60m bear conditions + coin underperforms BTC on the 1h.
 
 ---
 
 ## Surge vs Scout
 
-Surge requires the move to *already be established* across multiple timeframes. **[Scout](/features/alerts/scout)** can fire earlier — when momentum is just beginning to accelerate in the 5m window before a Surge would pass.
-
-Use both: Scout as an early heads-up, Surge as confirmation.
+Surge requires the move to *already be established* across multiple timeframes. **[Scout](/features/alerts/scout)** can fire earlier — when momentum is just beginning to accelerate before a Surge condition would be met.
