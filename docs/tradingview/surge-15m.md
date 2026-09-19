@@ -1,46 +1,11 @@
-# Surge 15m — TradingView Indicator
+# Surge 15m — existing TradingView script reference
 
-**Script name on TradingView**: "Coin-Sniffer — Surge 15m"
+This page is for users whose membership already includes a Surge 15m TradingView script. It does not advertise inclusion in the current [Dojo indicator offer](/tradingview/).
 
-Detects strong trending momentum anchored on the 15-minute window, requiring the move to be sustained and confirmed across the 1h and 8h timeframes, with volume concentrated in the current 15m period.
+**Purpose:** Momentum associated with the 15-minute context.
 
-::: warning
-Must be applied to a **1-minute chart**.
-:::
+Use the installed script's description for its required chart timeframe. Its settings determine the available labels, colours and alert conditions. Do not assume that a timeframe requirement from this script applies to the Dojo indicators.
 
-## How signals are generated
+Script events can differ from web-app alerts because the chart context, settings and version can differ. They are not guaranteed to match event for event.
 
-**Bull**: price is trending up on the 15m and the move fits into a consistent 1h and 8h uptrend. Volume is concentrated in the recent 15m window, not distributed across older candles.
-
-**Bear**: identical structure, all price conditions inverted.
-
-The signal is suppressed when the daily move is already significantly extended.
-
-## Input parameters
-
-### Thresholds group
-
-| Input | Description |
-|-------|-------------|
-| 15m Change Threshold (%) | Minimum 15m price move required to qualify |
-| Daily Safety Cap (%) | Suppresses signal if the 24h change exceeds this |
-| Volume Floor 15m (USDT) | Minimum 15m volume required |
-| Volume Floor 1h (USDT) | Minimum 1h volume required |
-
-### Display group
-
-Same as [Surge 5m](/tradingview/surge-5m#display-group): Show Labels, Show Background Color, Show Debug Table, Bull/Bear colors.
-
-### Moving Averages group
-
-Same as Surge 5m: EMA 21/34/55 with toggles and color pickers.
-
-## Surge 5m vs Surge 15m
-
-| | Surge 5m | Surge 15m |
-|--|----------|-----------|
-| Anchor window | 5m | 15m |
-| Timeframe stack | 5m → 15m → 1h | 15m → 1h → 8h |
-| Conviction level | Shorter-term | Higher — move must be larger and sustained longer |
-
-Surge 15m is a **higher conviction** signal. Use Surge 5m for shorter-term scalp setups and Surge 15m when you want a more established trend before acting.
+For the corresponding web-app alert family, see [Surge 15m alerts](/features/alerts/surge). For missing script access or questions about inclusion in your membership, see [Getting access](/tradingview/getting-access).

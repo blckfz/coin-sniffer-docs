@@ -1,48 +1,33 @@
-# What is Coin Sniffer?
+# What is Coin-Sniffer?
 
-Coin Sniffer is a **real-time cryptocurrency market screener** that monitors 200+ Binance Futures pairs around the clock and alerts you the moment a significant move or anomaly is detected.
+Coin-Sniffer combines a cryptocurrency market screener with alerts and Dojo setup monitoring. It covers a changing selection of 200+ Binance USDT perpetual futures pairs.
 
-## How it works
+Coin-Sniffer was built as an independent scanner and later extended with a Dojo layer. The web app and the separate TradingView indicators serve different workflows.
 
-```
-Binance Futures API
-      ↓  (live candle data, every minute)
- Go Backend (Railway)
-      ↓  calculates indicators + evaluates 17 alert rules
- WebSocket / REST API
-      ↓
-  Your browser  →  Discord / Telegram webhooks
-```
+## Three views in the app
 
-The backend processes every 1-minute candle for every tracked pair. From those 1m candles it constructs 5m, 15m, 1h, 4h, 8h, and 1d windows in real time. Alert rules run against those windows within milliseconds of each new candle closing.
+| View | Use it to |
+| --- | --- |
+| **Market Coins** | Search tracked coins, compare prices and market activity, and star a watchlist. |
+| **Alert History** | See which coins have recently triggered alerts and open their charts. |
+| **Dojo Zones** | Review higher-timeframe plans and follow waiting, open and closed setups. |
 
-## Key concepts
+Dojo plans cover **1D, 5D and 1W**. Shorter-term alert families include Surge, Scout, Raid, Whale and Catcher alerts. An alert identifies market activity to review; it is not an instruction to enter a trade.
 
-### Screener
-The main table showing **all tracked pairs** with their current price, percentage changes across timeframes, volume, and computed indicators (VCP, Fibonacci levels). You can sort and filter this table to surface what matters to you.
+## Before you start
 
-### Alerts
-When a coin meets a set of conditions for a given rule, an **alert fires**. Alerts appear in the in-app feed and, if you've configured webhooks, are immediately sent to your Discord or Telegram channel.
+You do not need a Binance API key or a TradingView subscription to use the web app. Coin-Sniffer does not place, manage or cancel orders for you.
 
-Each alert has a 2-minute cooldown per symbol — so you won't be spammed if a coin keeps meeting the same condition.
+The tracked market list changes over time. It is not a list of every Binance contract, and adding a coin to your watchlist does not add it to market coverage.
 
-### Alert Types
+## Access
 
-| Category | Types |
-|----------|-------|
-| **Surge** | 5m Bull/Bear, 15m Bull/Bear, 60m Bull/Bear, 60m V2 Bull/Bear |
-| **Scout** | Scout Bull, Scout Bear |
-| **Raid** | Bottom Raid V1/V2, Top Raid V1/V2 |
-| **Whale** | Whale Detector, Whale Accumulation, Whale Distribution |
+You can explore the [public preview](/features/demo) without signing in. Full app access requires a verified account and an active subscription or eligible trial started through checkout.
 
-### Watchlist
-A personal list of coins you want to track separately. Alerts can be filtered to show only watchlist coins.
-
-### TradingView Indicators
-7 Pine Script indicators (invite-only) that replicate the screener's alert logic so you can visualise the exact signals on a TradingView chart.
+[TradingView scripts](/tradingview/) are invite-only and sold separately. [Webhooks](/features/webhooks) require separately arranged Pro access.
 
 ## Next steps
 
-- [Create your account](/getting-started/signup) — 7-day free trial, no charge until it ends
-- [Take the quick tour](/getting-started/quick-tour) — understand the interface in 5 minutes
-- [Read about alert types](/features/alerts/) — know what each signal means before acting on it
+1. [Create your account](/getting-started/signup).
+2. [Take the quick tour](/getting-started/quick-tour).
+3. [Learn to read Dojo Zones](/features/dojo).

@@ -1,44 +1,39 @@
-# Alerts Overview
+# Alerts
 
-Coin Sniffer evaluates **17 alert rules** on every 1-minute candle close across all tracked pairs. When a coin meets all conditions for a rule, an alert fires — appearing in the in-app feed and being sent to any configured webhooks.
+Alerts draw attention to market activity or a change in a Dojo setup. They do not place orders or guarantee a direction.
 
-## Alert categories
+## Alert families
 
-| Category | Alert Types | Purpose |
-|----------|-------------|---------|
-| [Surge](/features/alerts/surge) | 5m/15m/60m Bull & Bear, 60m V2 Bull & Bear (8 total) | Explosive directional momentum with volume confirmation |
-| [Scout](/features/alerts/scout) | Scout Bull, Scout Bear (2 total) | Early acceleration — fires before Surge |
-| [Raid](/features/alerts/raids) | Bottom/Top Raid V1 & V2 (4 total) | Stop hunt / liquidity sweep reversals |
-| [Whale](/features/alerts/whale) | Whale Detector, Accumulation, Distribution (3 total) | Stealth large-player activity |
+| Family | What it highlights |
+| --- | --- |
+| [Surge](/features/alerts/surge) | Directional momentum, with 5m, 15m and 60m labels and V2 variants. |
+| [Scout](/features/alerts/scout) | Developing upward or downward momentum. |
+| [Raid](/features/alerts/raids) | Potential reversals around a recent downward or upward move. |
+| [Whale](/features/alerts/whale) | Unusual volume activity and its directional context. |
+| [Catcher and contrarian](/features/alerts/catchers) | Long-bias monitoring around sharp sell-offs. |
+| [Dojo](/features/dojo#zone-alerts-are-different-events) | New zones, price entering a zone, and price reaching an entry. |
 
-## How alerts are evaluated
+The available presets in **Settings → Alert Rules** are the reference for your notification choices. A preset can exist without producing an alert in the current market conditions.
 
-1. Every minute, the backend closes a new 1-minute candle for each symbol.
-2. From 1m candles it builds rolling 5m, 15m, 1h, 4h, 8h, and 1d windows.
-3. All 17 rules are checked against those windows in parallel.
-4. Any rule whose conditions all pass triggers an alert event.
-5. The alert is stored, pushed to connected WebSocket clients, and delivered to webhooks.
+## Choose notifications
 
-## Deduplication (cooldown)
+1. Open **Settings → Alert Rules**.
+2. Enable the built-in alert types you want to receive.
+3. Configure **Sound Notifications** and **Browser Notifications** as needed.
+4. Use **Test Sound** to check audio. Allow browser notifications when prompted.
 
-Each `symbol + rule type` pair has a **2-minute cooldown**. If BTCUSDT fires a "Surge 60 Bull" alert, the same symbol+rule won't fire again for 2 minutes — even if the conditions are still met. This prevents alert spam during sustained moves.
+Built-in alert selections sync with your account. Notification permissions and browser preferences can differ between devices. Keep the app open and connected for browser notifications; they are not a background push service after you close the app.
 
-## Reading alert cards
+## Review history
 
-Each alert card shows:
+Open **Alert History** to see recent activity grouped by coin. Rows show alert badges, counts and the latest alert time. Select a row to inspect the chart and timeline; the chart's **Alerts** button controls markers.
 
-- **Type label** (e.g., "Surge 60 Bull")
-- **Symbol** and current price at time of alert
-- **Key metric** that triggered the alert (e.g., "1h: +2.1%, Volume: 1.8M USDT")
-- **Timestamp**
+A live notification, a historical alert price and the coin's current price represent different moments. An old alert does not become a new setup because it remains visible in history.
 
-## Bull vs Bear
+## Presets and custom rules
 
-All directional alerts come in pairs:
+Built-in presets can be enabled or disabled; their detection criteria are not editable in the app. The **+ Custom Rule** form is not connected to live custom-alert evaluation in the current app. Do not rely on a saved custom rule to produce notifications.
 
-- **Bull** — price is moving up, conditions are bullish
-- **Bear** — exact mirror: price moving down, same structural conditions but negated
+## Delivery outside the app
 
-::: warning
-Alerts are informational signals only. They are not buy or sell recommendations. Always do your own research before making any trading decisions.
-:::
+[Pro webhooks](/features/webhooks) can send eligible alerts to your community or tools. Pro access is arranged and priced separately. Delivery can be delayed or interrupted; there is no guaranteed millisecond delivery time.

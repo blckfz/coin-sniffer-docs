@@ -1,100 +1,77 @@
 # Troubleshooting
 
-## Screener / App
+## Account and access
 
-### The app is not loading
+### I registered but cannot enter the app
 
-1. Check your internet connection.
-2. Try a hard refresh: **Ctrl+Shift+R** (Windows/Linux) or **Cmd+Shift+R** (Mac).
-3. Clear browser cache and try again.
-4. Try an incognito/private window to rule out browser extension conflicts.
-5. If still broken, check our Discord for any active outage announcements.
+Confirm your email using the link in your inbox. If needed, check spam and request a fresh link from the sign-in page. Then activate a subscription or eligible trial through checkout. Registration alone does not activate access.
 
-### Screener table shows "Loading..." indefinitely
+### I purchased but still see a plan selection screen
 
-The backend may be restarting (deployment) or temporarily unreachable. Wait 30–60 seconds and refresh. If it persists beyond 2 minutes, it's likely a service outage — check Discord.
+Use the same email for Whop and Coin-Sniffer, verify it, and return to the app after checkout. Refresh once or sign out and back in. If still blocked, contact Coin-Sniffer through Whop with your account email and purchase reference.
 
-### Data looks stale or outdated
+### I forgot my password
 
-The screener refreshes every 5 seconds. If prices look stale:
-- Check the timestamp displayed on the latest update (bottom of the page or in the status bar).
-- If timestamps are old (>30s), the backend may be struggling to process data. Refresh and wait.
-- During periods of very high market volatility, Binance WebSocket connections sometimes lag or disconnect. The backend reconnects automatically — delays are usually <30 seconds.
+Use **Forgot password?** on the [sign-in page](https://coin-sniffer.com/login). Use the most recent reset email and do not share the reset link.
 
-### I can't log in
+## Charts and prices
 
-- Double-check your email and password.
-- Use the **Forgot Password** link on the login page.
-- Check your spam folder for the password reset email (sender: `no-reply@coin-sniffer.com`).
-- If you used a social login previously, try that method instead.
+### “Rate limited — chart will retry in 60s”
 
----
+Let the automatic retry finish. Repeatedly reloading or switching intervals will not resolve a rate limit. If it persists, report the symbol, timeframe and time of the error.
 
-## Alerts
+### A chart or price looks stale
 
-### No alerts are appearing in the feed
+1. Confirm the symbol and timeframe, and check the date of the latest visible candle.
+2. Distinguish the current price from the plan's **Price when armed**, which is historical.
+3. Look for connection, **stored candles** or **untracked** notices.
+4. Bring the tab into view, allow it to update, and refresh once if needed.
+5. If the issue persists, report whether it affects the public preview, Market Coins or Dojo Zones, and whether one symbol or several are affected.
 
-- Alerts require specific market conditions to fire. During low-volatility periods it's normal to have long gaps between alerts.
-- Make sure you're not filtering the alert feed (e.g., watchlist-only mode) and expecting global alerts.
-- Confirm your subscription is active — alerts are not delivered to expired accounts.
+A daily chart can show old completed candles while its current price changes. Conversely, a current price does not prove that candle history is complete. Report the specific part that appears frozen.
 
-### Alerts appear in the app but not in Discord/Telegram
+### A coin's Dojo chart opens but market statistics are unavailable
 
-1. Go to **Webhooks** settings and click **Test** — check if you get a test message.
-2. If the test fails, the webhook URL is likely invalid. Re-copy it from Discord/Telegram.
-3. If the test succeeds but real alerts don't arrive, the webhook may be hitting Discord's rate limit. Discord allows 30 messages per minute per webhook — if you're getting that many alerts, some will be queued or dropped.
+The plan may outlive the coin's inclusion in the current market list. Missing statistics are not zero activity. If its quote or chart stops updating, report the symbol through Whop.
 
-### I get duplicate alerts in Discord
+### The page behaves differently in another browser
 
-Each `symbol + alert type` has a 2-minute cooldown server-side, so duplicates from the screener itself are unlikely. However, if you've configured the same webhook URL twice (or in multiple webhook slots), each will fire independently — check your webhook configuration.
+Try a private window with extensions disabled. Wallet-extension errors mentioning `solana` or `ethereum` can come from injected browser scripts; Coin-Sniffer does not require a wallet connection. Report chart-loading errors separately if they remain.
 
-### I'm getting too many alerts
+## Dojo status
 
-The volume of alerts depends on market conditions. During high-volatility sessions (news events, BTC breakouts) many pairs may fire simultaneously. Options:
-- Filter the in-app feed to Watchlist-only to reduce noise.
-- Use separate Discord channels/webhooks for different alert types or watchlist vs global.
-- The TradingView Pine Script indicators let you tune thresholds per chart if you want to be more selective.
+### There are no zones
 
----
+Clear the symbol search and check timeframe, direction and **Live / Closed / All** filters. A symbol may have no published setup, and an empty Live view can be normal. An explicit loading error is different from an empty result.
 
-## TradingView
+### Price touched a level but status has not changed
 
-### Indicators not showing in "Invite-only scripts"
+Check the exact entry and publication date. Entering the zone does not necessarily reach entry. Recorded outcomes and the table update separately from live prices; see [Dojo status and timing](/features/dojo#outcomes-and-timing).
 
-- Make sure your TradingView username is entered in **Account → Billing** in Coin Sniffer.
-- Wait 5–10 minutes after saving the username, then refresh TradingView.
-- Sign out of TradingView and sign back in — this refreshes your script access.
-- The username is case-sensitive. Verify it matches exactly what's shown on your TradingView profile.
+## Notifications and webhooks
 
-### Indicator shows "study_script_error"
+### No notifications arrive
 
-This usually means the chart is not on the 1-minute timeframe. All Coin Sniffer Pine Scripts **require a 1m chart**. Switch the chart timeframe to 1m and reload the indicator.
+Check the connection and your enabled types under **Settings → Alert Rules**. Check sound and browser notification settings separately. Allow notifications in browser settings if previously blocked, and keep an app session open.
 
-### No signals are appearing on the chart
+An enabled preset does not promise frequent alerts. The current market conditions may not produce one.
 
-- Confirm you're on a **1-minute chart**.
-- Check that the **Show Labels** option is enabled in the indicator settings.
-- The signal conditions may not be met on the coin you're viewing. Try on a more liquid pair (e.g., BTCUSDT, ETHUSDT) during an active session to verify the indicator is working.
-- Enable the **Debug Table** input in the indicator settings to see the live values of all conditions.
+### Sound does not play
 
----
+Enable **Sound Notifications**, use **Test Sound**, check system volume and make sure the tab is not muted. Browsers may require an interaction before audio can play.
 
-## Billing
+### Webhooks is locked or delivery fails
 
-### I subscribed but still see the trial/expired page
+Confirm separately arranged Pro access and an active subscription. For a saved destination, check its enabled state, category selection, watchlist scope and alert-type preferences, then use **Test**. See [Webhooks](/features/webhooks).
 
-- Log out and back in — your subscription status is checked at login.
-- Wait 1–2 minutes after completing payment, then refresh.
-- If still locked out after 5 minutes, contact us on Discord with your account email.
+## TradingView access
 
-### My payment failed
+Confirm that your purchase includes the script and that you supplied the correct TradingView username. All current scripts are invite-only. Check the membership's access instructions and allow the stated provisioning time.
 
-- Check the email sent by Whop for details on the failure.
-- Update your payment method in the Whop billing portal (linked from **Account → Billing**).
-- After updating, the retry should happen automatically within 24 hours.
+If the app provides a username field, saving it is not instant script access; the app states up to 24 hours. Do not switch every script to 1m as a general fix. Follow the requirements of that script.
 
----
+## Contact support
 
-## Still stuck?
+Contact Coin-Sniffer through Whop. Include the affected page, symbol, timeframe, approximate time with timezone, visible error, and steps to reproduce. For account access, include your account email and purchase reference privately.
 
-Join our **Discord server** (link in the app footer or nav). We're active there and can help debug issues directly.
+Remove passwords, bot tokens, webhook URLs containing credentials, and authentication or reset links from screenshots and logs before sharing them.

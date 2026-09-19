@@ -1,8 +1,9 @@
-# Indicators — Overview
+# Chart and indicator reference
 
-Coin Sniffer computes two technical indicators server-side for every tracked pair on every candle update: **VCP** and **Fibonacci Pivot Levels**.
+The current web app centres on market statistics, alert markers and [Dojo plan overlays](/features/dojo). Its chart is separate from the invite-only scripts available on TradingView.
 
-Both are visible in the screener table and chart modal. They're also at the heart of the alert evaluation logic.
+- [Charts](/features/charts): timeframes, controls and data availability.
+- [Dojo Zones](/features/dojo): plan levels, confluence, volume context and outcomes.
+- [TradingView indicators](/tradingview/): Dojo Structure, Dojo Zones and Dojo Liquidity.
 
-- [VCP (Volatility Contraction Pattern)](/features/indicators/vcp) — momentum indicator combining price position and candle body direction
-- [Fibonacci Levels](/features/indicators/fibonacci) — support and resistance levels based on the current 24h range
+The [VCP](/features/indicators/vcp) and [Fibonacci reference](/features/indicators/fibonacci) pages explain terminology from earlier documentation. They are not instructions for controls present on the current main chart.

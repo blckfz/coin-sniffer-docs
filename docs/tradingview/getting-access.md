@@ -1,58 +1,24 @@
-# Getting TradingView Access
+# Getting TradingView access
 
-The Pine Script indicators are invite-only. Here's how to get access after subscribing.
+All current Dojo scripts are **invite-only**. Access must be granted to your TradingView username; opening a publication page alone does not unlock the indicator.
 
-## Step 1 — Subscribe to the right plan
+## Request access
 
-TradingView indicator access is included in:
-- **TradingView Indicators** plan ($12/mo or $120/yr)
-- **Bundle** plan ($39/mo or $390/yr)
+1. Check the Dojo indicator offer through Coin-Sniffer on Whop, including which scripts and access period it covers.
+2. Follow the purchase or trial instructions and provide your TradingView username. You do not need to share your TradingView password.
+3. Wait for access confirmation, then sign in to that TradingView account and look for the granted scripts under **Invite-only scripts** in the indicator picker.
+4. Add the script to a chart and follow its description and settings.
 
-The **Screener-only** plan does not include TradingView access. See [Plans & Pricing](/billing/).
+Use the links on the [indicator overview](/tradingview/) to find the published scripts. If requesting test access, confirm its end date and the paid option for continued use.
 
-## Step 2 — Provide your TradingView username
+## Existing app add-on holders
 
-After subscribing, you need to tell us your TradingView username (the `@username` shown on your TradingView profile) so your account can be granted script access.
+When your Coin-Sniffer account shows an active TradingView add-on, enter your username in [Billing](https://coin-sniffer.com/billing) or **Settings → General** and save it. The app states that indicators will be shared within 24 hours.
 
-1. Log in to [coin-sniffer.com](https://coin-sniffer.com).
-2. Go to **Account** → **Billing**.
-3. Enter your TradingView username in the **TradingView Username** field.
-4. Save. Access is typically granted within a few minutes.
+That field appears only for eligible accounts. If your separately purchased Dojo offer uses a different access process, follow the instructions for that offer or contact Coin-Sniffer through Whop.
 
-::: tip
-Your TradingView username is visible on your TradingView profile page — it's the `@handle`, not your display name.
-:::
+## Missing access
 
-## Step 3 — Add indicators to your chart
+Check the account username, the script included in your purchase, and whether the granted access period is still active. Refresh TradingView after access is confirmed. If the script remains unavailable, contact Coin-Sniffer through Whop with your username and purchase reference.
 
-Once access is granted:
-
-1. Open [TradingView](https://tradingview.com) and open a chart.
-2. Switch the chart to **1-minute timeframe** (required for all indicators).
-3. Click **Indicators** (the icon in the top toolbar).
-4. Click **Invite-only scripts** in the left panel.
-5. You'll see the Coin Sniffer indicators listed. Click **+** to add them.
-
-If the indicators don't appear in the **Invite-only scripts** section, wait a few more minutes, then refresh TradingView.
-
-## Troubleshooting
-
-**I subscribed but don't see the indicators**
-
-- Make sure you entered your TradingView username correctly (check for typos, it's case-sensitive).
-- Wait 5–10 minutes after saving your username.
-- Refresh TradingView by pressing F5.
-- Try signing out of TradingView and signing back in.
-
-**My subscription is active but indicators stopped working**
-
-- Confirm your subscription is still active in the **Billing** page.
-- If you cancelled and re-subscribed, your TradingView username may need to be re-confirmed.
-
-**I changed my TradingView username**
-
-- Update the username in your Coin Sniffer account billing page. The old username will lose access and the new one will be granted within a few minutes.
-
-## Need help?
-
-Contact us via the Discord server linked in the app footer.
+A TradingView subscription and an invite to a private script are separate things. Check your TradingView account's own limits for indicator and alert usage.

@@ -1,86 +1,46 @@
 ---
 layout: home
-
 hero:
-  name: "Coin Sniffer"
-  text: "Real-Time Crypto Alerts"
-  tagline: Monitor 200+ Binance Futures pairs with 17 alert types, TradingView indicators, and instant Discord/Telegram notifications — 24/7.
-  image:
-    src: /hero-image.svg
-    alt: Coin Sniffer dashboard preview
+  name: "Coin-Sniffer"
+  text: "Market alerts and Dojo zones"
+  tagline: Learn to use the screener, review higher-timeframe setups, and follow market activity across 200+ Binance Futures pairs.
   actions:
     - theme: brand
-      text: Get Started
+      text: Get started
       link: /getting-started/
     - theme: alt
-      text: Open App →
+      text: Understand Dojo Zones
+      link: /features/dojo
+    - theme: alt
+      text: Open Coin-Sniffer
       link: https://coin-sniffer.com
-
 features:
-  - icon: 🚨
-    title: 17 Alert Types
-    details: Surge (5m/15m/60m), Scout, Raid, and Whale alerts — evaluated in real-time on every candle across 200+ pairs.
-  - icon: 📈
-    title: TradingView Scripts
-    details: 7 invite-only Pine Script indicators that mirror the screener's alert logic directly on your TradingView charts.
-  - icon: ⚡
-    title: Sub-100ms Latency
-    details: Alerts fire from candle close to WebSocket delivery in under 100 milliseconds. No polling, no delays.
-  - icon: 🔔
-    title: Discord & Telegram
-    details: Configure webhook URLs for any channel. Receive formatted alert cards the moment a signal fires.
-  - icon: 📊
-    title: 200+ Pairs
-    details: All Binance USDT Futures pairs tracked simultaneously with 6 timeframes (5m → 1d) pre-computed server-side.
-  - icon: 🐋
-    title: Whale Detection
-    details: Spot large-player accumulation or distribution — abnormally high volume with minimal price impact.
+  - title: Dojo Zones
+    details: Browse daily, 5-day and weekly setups with a zone, entry, stop, three targets and recorded status.
+    link: /features/dojo
+  - title: Market monitoring
+    details: Search the current market list, star coins, review alert history and inspect charts.
+    link: /features/screener
+  - title: Alert preferences
+    details: Choose built-in alert types and configure sound and browser notifications.
+    link: /features/alerts/
+  - title: TradingView indicators
+    details: Learn about the separately sold, invite-only Dojo Structure, Dojo Zones and Dojo Liquidity scripts.
+    link: /tradingview/
+  - title: Community delivery
+    details: Send alerts to your own community or tools with Pro webhook access, arranged and priced separately.
+    link: /features/webhooks
+  - title: Public preview
+    details: Explore selected charts and historical setups before subscribing. Active setup prices are hidden in the preview.
+    link: /features/demo
 ---
 
-## What's in the docs?
+## Start here
 
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:24px;">
+- [Create and verify your account](/getting-started/signup).
+- [Take the quick tour](/getting-started/quick-tour).
+- [Read a Dojo plan and its status](/features/dojo).
+- [Check plans and access](/billing/).
+- [Get help with a chart, login or notification](/troubleshooting).
 
-<a href="/getting-started/" style="text-decoration:none">
-
-### 🚀 Get Started
-New here? Start with account creation and a quick tour of the app.
-
-</a>
-
-<a href="/features/alerts/" style="text-decoration:none">
-
-### 🚨 Alert Types
-Deep-dive into all 17 alert types — what they detect and when they fire.
-
-</a>
-
-<a href="/tradingview/" style="text-decoration:none">
-
-### 📈 TradingView
-Setup guide and full reference for all 7 Pine Script indicators.
-
-</a>
-
-<a href="/features/webhooks" style="text-decoration:none">
-
-### 🔔 Webhooks
-Step-by-step Discord and Telegram webhook configuration.
-
-</a>
-
-<a href="/billing/" style="text-decoration:none">
-
-### 💳 Plans & Pricing
-Compare plans, understand the free trial, and manage your subscription.
-
-</a>
-
-<a href="/faq" style="text-decoration:none">
-
-### ❓ FAQ
-Common questions about the screener, alerts, billing, and TradingView access.
-
-</a>
-
-</div>
+Coin-Sniffer provides informational and educational tools. It does not place trades or connect to your exchange account. Alerts and historical outcomes do not guarantee future results. Cryptocurrency futures trading involves substantial risk.

@@ -1,39 +1,34 @@
 # Charts
 
-Click any row in the screener table to open an interactive chart for that symbol.
+Select a row in **Market Coins**, **Alert History** or **Dojo Zones** to inspect its chart. Desktop shows the chart beside the table; mobile uses a details panel.
 
-## Chart features
+## Timeframes and controls
 
-- **Candlestick chart** — OHLCV candlestick data from Binance Futures
-- **Fibonacci pivot levels** — support and resistance levels overlaid on the chart (see [Fibonacci](/features/indicators/fibonacci))
-- **Volume bars** — volume as a subplot below the price chart
-- **Timeframe selector** — switch between 1m, 5m, 15m, 1h, 4h, 1d views
-- **Crosshair** — hover over any bar to see OHLCV values
+Charts open on **1D**. The buttons offer **1m, 5m, 15m, 1h, 4h and 1d**. Selecting a Dojo setup returns the chart to the daily view, including when the setup itself is labelled 5D or 1W.
 
-## Timeframe selector
+- Pan and zoom to inspect candles.
+- Use the crosshair and time axis to check a candle's time or date.
+- Read volume below the candles.
+- Use **Alerts** to show or hide alert markers.
+- Review the alert timeline below the chart.
+- Drag the divider to adjust the chart height where available.
 
-Use the timeframe buttons at the top of the chart (1m / 5m / 15m / 1h / 4h / 1d) to switch the candle resolution. The chart fetches historical data for the selected timeframe from Binance Futures.
+## Dojo overlays
 
-## Fibonacci levels
+Selecting a Dojo row shows the plan's zone, entry, stop and targets. Those levels belong to that selected setup; changing the chart interval does not generate a new plan.
 
-When you open a chart, the current Fibonacci pivot levels for that symbol are drawn as horizontal lines:
+The standard chart does not automatically draw the separate TradingView Dojo indicators or a full Fibonacci pivot ladder. Those are different tools. See [Dojo Zones](/features/dojo) and [TradingView indicators](/tradingview/).
 
-| Level | Color |
-|-------|-------|
-| Resistance 1.0 | Red |
-| Resistance 0.618 | Orange |
-| Resistance 0.382 | Yellow |
-| Pivot | White / Grey |
-| Support 0.382 | Light green |
-| Support 0.618 | Green |
-| Support 1.0 | Dark green |
+## Prices, candles and status
 
-These are calculated from the current 24h high, low, and last price. See [Fibonacci Levels](/features/indicators/fibonacci) for the formula.
+The current price can change before a candle closes. The newest candle is provisional, and recent bars or older history may be unavailable during an interruption. Do not treat the displayed live price as proof that a historical series is complete.
 
-## Data source
+If **stored candles** appears, the chart is using available saved history. The latest candle may be missing, and gaps can exist. An **untracked** notice means the coin is outside the current market list and some market statistics may be unavailable.
 
-Chart data is fetched directly from the **Binance Futures API** (`fapi.binance.com`) when you open the modal. This is separate from the main screener data — it's fetched on demand so historical bars are available.
+A Dojo plan's **Price when armed** is a historical reference, not a live quote. Its recorded status can update on a different schedule from the price.
 
-## Closing the chart
+## Rate limits or missing data
 
-Press **Escape** or click the **×** button to close the chart modal without leaving the screener.
+For **“Rate limited — chart will retry in 60s”**, allow the retry to complete. Repeated refreshes do not speed it up. If the issue persists, report the symbol, selected timeframe and time of the problem through Whop.
+
+See [Troubleshooting](/troubleshooting#charts-and-prices).

@@ -1,33 +1,24 @@
-# Free Trial
+# Trial access
 
-Every new Coin Sniffer account starts with a **7-day free trial**. No credit card is required.
+The app advertises a **seven-day trial** for eligible customers through Whop checkout. Registering a Coin-Sniffer account alone does not start the trial or unlock the dashboard.
 
-## What's included
+## Start a trial
 
-The trial gives you **full access** to the plan features — there are no restrictions or feature limits during the trial period. You get exactly the same experience as a paying subscriber.
+1. Create and verify your [Coin-Sniffer account](/getting-started/signup).
+2. Follow the plan selection screen to Whop checkout.
+3. Review whether a trial is offered, its duration, payment requirements and the date and amount of any first charge.
+4. Complete checkout and return to the app.
 
-## Trial timeline
+If you start on Whop first, register and verify the same email in Coin-Sniffer afterward.
 
-| Day | What happens |
-|-----|-------------|
-| Day 1 | Account created, trial starts immediately |
-| Day 6 | Reminder email: trial ends in 24 hours |
-| Day 7 | Trial ends. App access paused until you subscribe. |
+Do not assume that no payment method is required or that every purchase qualifies. The offer shown at checkout determines those terms.
 
-## After the trial
+## What it covers
 
-When the trial ends you'll see the **Subscription Expired** page. From there:
+An activated web app trial provides access to the screener, built-in alerts, charts, watchlist and Dojo Zones. It does not automatically include the separately sold TradingView scripts or Pro webhook delivery.
 
-1. Click **Choose a Plan** (or go to **Account → Billing**).
-2. Select a plan and enter payment details via Whop.
-3. Access is restored immediately after payment.
+## Before it ends
 
-Your settings, watchlists, and alert history are preserved. Nothing is deleted when the trial ends.
+Check your subscription details in [Billing](https://coin-sniffer.com/billing) and **Manage on Whop** for the renewal date and cancellation options. Do not rely on receiving a reminder email before a charge.
 
-## Can I get an extension?
-
-Trial extensions are not offered by default. If you had technical issues during the trial that prevented you from using the product, reach out via Discord and we'll consider it case by case.
-
-## Is there a free tier?
-
-There is no ongoing free tier — the 7-day trial is the only way to use Coin Sniffer without a subscription. After the trial, a paid plan is required.
+If you do not want to continue, cancel through Whop under the terms shown for your membership. If access expires, the app shows a plan selection screen. The [public preview](/features/demo) remains available without a subscription.

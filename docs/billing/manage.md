@@ -1,56 +1,30 @@
-# Manage Your Subscription
+# Manage your subscription
 
-Subscriptions are managed through **Whop** — the payment platform Coin Sniffer uses for billing.
+## Check access and renewal
 
-## View your current plan
+Open [Billing](https://coin-sniffer.com/billing) while signed in. It shows the available plan and status information, including the renewal or access-end date where supplied.
 
-1. Log in to [coin-sniffer.com](https://coin-sniffer.com).
-2. Click **Account** → **Billing**.
-3. Your current plan, next billing date, and status are shown here.
+Select **Manage on Whop** to manage the membership, payment method and cancellation. If that button is unavailable, open the membership in the Whop account used for the purchase.
 
-## Upgrade or change plan
+## Cancel or renew
 
-1. Go to **Account → Billing** in the app.
-2. Click **Change Plan** or visit the [pricing page](https://coin-sniffer.com/pricing) directly.
-3. Select the new plan. Billing changes take effect immediately.
+Use the cancellation controls in Whop and review the date shown there. Cancellation with time remaining keeps app access until the current access period ends. The Billing page can show **Access ends** and a **Resubscribe** button for a canceled membership.
 
-If upgrading from Screener to Bundle, you'll be charged the prorated difference for the remainder of your current billing cycle.
+Check any plan-change, refund or payment-retry terms in Whop. Coin-Sniffer's documentation does not promise automatic prorating, refunds or a particular retry schedule.
 
-## Cancel your subscription
+## TradingView username
 
-1. Go to **Account → Billing** in the app.
-2. Click **Cancel Subscription**.
-3. Confirm the cancellation.
+If your account has an active TradingView add-on, **Billing** and **Settings → General** provide a TradingView username field.
 
-After cancellation:
-- Your access continues until the **end of your current billing period**.
-- You will **not** be charged again.
-- At the end of the period, access is revoked and you'll see the Subscription Expired page.
+Enter the username of the TradingView account that should receive access and save it. The app states that sharing can take up to 24 hours; saving the username does not instantly unlock a script. Contact Coin-Sniffer through Whop if access is still missing or your username changes.
 
-::: tip
-Cancellation does not delete your account or data. If you re-subscribe later, your watchlist and settings are restored.
-:::
+For a separately purchased Dojo indicator offer, follow that offer's access instructions. See [TradingView access](/tradingview/getting-access).
 
-## Reactivate after cancellation
+## Purchased but still locked out?
 
-If you cancelled and your access has expired, go to the **Subscription Expired** page in the app and click **Resubscribe**. Or visit [coin-sniffer.com](https://coin-sniffer.com) and log in — you'll be directed to the billing page.
+1. Verify your Coin-Sniffer email.
+2. Check that it matches the email used in Whop.
+3. Return from checkout and refresh the app; if needed, sign out and back in.
+4. If access remains unavailable, contact Coin-Sniffer through Whop with your account email and purchase reference.
 
-## TradingView username management
-
-If you have the TradingView Indicators or Bundle plan:
-
-1. Go to **Account → Billing**.
-2. Enter or update your **TradingView Username** (the `@handle` on your TradingView profile).
-3. Save. TradingView access is granted within a few minutes.
-
-If you change your TradingView username, update it here — the old username will lose access and the new one will be granted automatically.
-
-## Payment failures
-
-If a payment fails, Whop will retry the charge automatically. You'll receive an email notification. During the retry window, your access may remain active. If the payment continues to fail, access will be suspended until a successful payment is made.
-
-Update your payment method directly through the Whop billing portal (linked from the **Billing** page in the app).
-
-## Invoices and receipts
-
-Billing receipts are sent by email after each successful charge and are also accessible in your Whop account dashboard.
+Do not send your password, payment card details or authentication links.

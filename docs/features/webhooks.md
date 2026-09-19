@@ -1,84 +1,55 @@
-# Webhooks
+# Webhooks — Pro
 
-Receive alert notifications instantly in **Discord** or **Telegram** (or any service that accepts incoming webhooks).
+Webhooks deliver alerts to your own Discord, Telegram, Slack or HTTP destination. This is a **Pro feature arranged and priced separately**, especially for community owners and custom tools.
 
-## How webhooks work
+You need an active subscription and Pro enabled on your account. Standard subscription and trial access do not unlock webhook delivery. Contact Coin-Sniffer through Whop to agree the service and pricing.
 
-When an alert fires on any tracked pair, the backend immediately sends a formatted POST request to your configured webhook URL. This happens within milliseconds of the alert being evaluated — no polling, no delay beyond network latency.
+## Add a destination
 
-Each alert message includes:
-- Alert type (e.g., "Surge 60 Bull")
-- Symbol and price at time of alert
-- Key metrics (% changes, volume)
-- Timestamp
+Once Pro is enabled:
 
-## Setting up a Discord webhook
+1. Open **Settings → Webhooks**.
+2. Select **Add Webhook**.
+3. Enter a **Name**, choose the **Type**, and supply the **Webhook URL**.
+4. Optionally enable **Watchlist alerts only**.
+5. Choose **Momentum**, **Dojo**, or both under **Alert categories**.
+6. Select **Save**, ensure the destination is enabled, then select **Test**.
+7. Check that the test message arrived at the intended destination.
 
-### Step 1 — Create the webhook in Discord
+The page shows your webhook limit. You can edit, disable or delete a saved destination.
 
-1. Open your Discord server and go to the channel where you want alerts.
-2. Click the **⚙️ Edit Channel** gear icon.
-3. Go to **Integrations** → **Webhooks**.
-4. Click **New Webhook**.
-5. Give it a name (e.g., "Coin Sniffer Alerts").
-6. Click **Copy Webhook URL**. It looks like:
-   ```
-   https://discord.com/api/webhooks/1234567890/xxxxxxxxxxxx
-   ```
+## Destination types
 
-### Step 2 — Add it to Coin Sniffer
+| Type | What to enter |
+| --- | --- |
+| Discord | An incoming webhook URL for a channel you control. |
+| Telegram | A bot message URL containing your bot token and destination chat ID. |
+| Slack | An incoming webhook URL for your Slack destination. |
+| HTTP (Generic) | Your receiving endpoint URL. |
 
-1. In Coin Sniffer, click **Webhooks** in the top toolbar.
-2. Paste the URL into the **Discord Webhook URL** field.
-3. Click **Test** to send a test message to your channel.
-4. Click **Save**.
+For Telegram, the current form uses one **Webhook URL** field, not separate token and chat-ID fields. Its format is:
 
-Alerts will now appear in your Discord channel formatted as embed cards.
+```text
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage?chat_id=<YOUR_CHAT_ID>
+```
 
-## Setting up a Telegram webhook
+Use credentials for a bot you control and a chat where it has permission to send messages. Contact support through Whop if you need help configuring the destination. Generic HTTP integrations may need separate setup; agree the expected message format before relying on delivery.
 
-### Step 1 — Create a Telegram bot
+Treat webhook URLs and bot tokens as credentials. Do not post them in public channels or include them in screenshots sent for support.
 
-1. Open Telegram and message **@BotFather**.
-2. Send `/newbot` and follow the prompts (name your bot, choose a username).
-3. BotFather will give you a **bot token**: `7123456789:AAxxxxxxxx...`
+## Choose what gets delivered
 
-### Step 2 — Get your chat ID
+- **Momentum** includes the shorter-term market alert families.
+- **Dojo** includes zone publication and zone/entry events.
+- **No category selected means all categories**, not disabled delivery.
+- **Watchlist alerts only** additionally restricts the destination to your saved coins.
 
-1. Start a chat with your new bot (search for it by username and click Start).
-2. Send it any message.
-3. Open this URL in your browser (replace `YOUR_BOT_TOKEN`):
-   ```
-   https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
-   ```
-4. In the JSON response, find `"chat":{"id": ...}` — that number is your **chat ID**.
-
-### Step 3 — Add it to Coin Sniffer
-
-1. In Coin Sniffer, click **Webhooks** in the top toolbar.
-2. Enter your **Bot Token** and **Chat ID**.
-3. Click **Test** to verify.
-4. Click **Save**.
-
-## Multiple webhooks
-
-You can configure multiple webhook URLs — for example, one Discord channel for all screener alerts and a separate channel for watchlist-only alerts. Each webhook can be independently enabled/disabled.
+Your enabled built-in alert types also affect delivery. Use separate destinations for separate audiences if needed. These destination filters do not change the market scanner or the setup history.
 
 ## Troubleshooting
 
-**Test message sent but nothing appeared in Discord**
+If the Webhooks tab is locked, confirm the subscription and separately arranged Pro access. Older webhook configurations may need to be added again after Pro is enabled.
 
-- Double-check the webhook URL — make sure you copied the full URL including the token at the end.
-- Check the channel permissions — the webhook may not have permission to post in that channel type.
-- Try deleting the webhook in Discord and creating a new one.
+If tests fail, check the full destination URL, permissions and bot/channel settings. If tests arrive but market alerts do not, check that the webhook is enabled, its categories and watchlist scope, and your alert-type selections.
 
-**Alerts appearing in the app but not in webhook**
-
-- Confirm the webhook is enabled (not toggled off) in the Webhooks settings.
-- Check if the webhook URL returns any error by clicking **Test**.
-- Discord sometimes rate-limits webhooks — if you're receiving many alerts in a short period, some may be queued.
-
-**Telegram: "chat not found" error**
-
-- Make sure you sent at least one message to your bot before fetching the chat ID.
-- For group chats, the chat ID is negative (e.g., `-1001234567890`). Add the bot to the group and send a message there first.
+Delivery depends on the destination and service availability. A successful test does not guarantee uninterrupted delivery or a particular latency.

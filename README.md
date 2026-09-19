@@ -1,49 +1,39 @@
-# coin-sniffer-docs
+# Coin-Sniffer documentation
 
-User documentation site for [Coin Sniffer](https://coin-sniffer.com) — built with [VitePress](https://vitepress.dev).
+User documentation for [Coin-Sniffer](https://coin-sniffer.com), built with VitePress. Published site: [docs.coin-sniffer.com](https://docs.coin-sniffer.com).
 
-**Live**: https://docs.coin-sniffer.com
-
-## Development
+## Develop and check
 
 ```bash
-npm install
-npm run dev       # localhost:5173
-npm run build     # production build → docs/.vitepress/dist/
-npm run preview   # preview the built site
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-## Structure
+The production build is written to `docs/.vitepress/dist/`. VitePress checks internal page links during the build.
 
-```
-docs/
-├── index.md                  # Home page
-├── getting-started/          # Onboarding: what is it, signup, quick tour
-├── features/
-│   ├── alerts/               # Surge, Scout, Raids, Whale
-│   ├── indicators/           # VCP, Fibonacci
-│   ├── screener.md
-│   ├── watchlist.md
-│   ├── webhooks.md
-│   └── charts.md
-├── tradingview/              # Pine Script indicator docs
-├── billing/                  # Plans, trial, manage subscription
-├── faq.md
-└── troubleshooting.md
-```
+## Content
 
-## Deployment
+- `docs/getting-started/`: account verification, access and the app tour.
+- `docs/features/dojo.md`: setup plans, alerts, status and outcome limitations.
+- `docs/features/`: charts, market list, watchlist, public preview and Pro webhooks.
+- `docs/features/alerts/`: user-facing alert families and notification preferences.
+- `docs/tradingview/`: current invite-only Dojo indicators and existing script references.
+- `docs/billing/`: current purchase, trial and subscription workflows.
+- `docs/faq.md` and `docs/troubleshooting.md`: user support.
+- `docs/.vitepress/config.mts`: navigation and site metadata.
 
-Auto-deploys to Vercel on push to `main`. The custom domain `docs.coin-sniffer.com` is configured in the Vercel dashboard.
+Existing page paths are retained so saved links continue to work. Earlier reference pages clarify when they do not describe a current control or offer.
 
-For manual Vercel setup:
-1. Import this repo in [Vercel](https://vercel.com/new)
-2. Framework: **Other** (not Vite — VitePress has its own build)
-3. Build command: `npm run build`
-4. Output directory: `docs/.vitepress/dist`
-5. Add custom domain `docs.coin-sniffer.com` in Vercel → Project → Domains
-6. Add a CNAME record in your DNS: `docs` → `cname.vercel-dns.com`
+## Editorial boundary
 
-## Contributing
+Document what users can see and do in the current app. Verify important behaviour against the active screen and the implemented access rules, rather than treating an unused component, code comment or old marketing text as an available feature.
 
-Edit the `.md` files in `docs/`. VitePress uses standard Markdown with some [extensions](https://vitepress.dev/guide/markdown).
+Do not publish detection formulas, proprietary thresholds or scoring recipes, infrastructure and database details, private endpoints, account data, credentials, tokens or deployment configuration. Use placeholders for customer-supplied webhook credentials. Do not copy internal source comments into the public site.
+
+Explain user-visible limits, including incomplete chart data, outcome timing and the difference between a modelled entry and an actual exchange fill. Avoid promises of fixed latency, continuous availability, profitability or permanent history.
+
+For pricing and trial terms, check the current purchase flow. Do not advertise an older bundle or promise automatic indicator access merely because an account still supports an existing add-on.
+
+Only documentation and documentation-site configuration belong in this repository's content updates.

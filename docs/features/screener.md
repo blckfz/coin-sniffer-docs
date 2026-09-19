@@ -1,61 +1,28 @@
-# Screener Table
+# Market Coins
 
-The screener is the main view of the app — a live-updating table showing all tracked Binance Futures pairs with real-time price data and pre-computed indicators.
+**Market Coins** is the main screener table. It shows the current selection of Binance USDT perpetual futures pairs, with periodically refreshed prices and market statistics.
 
-## The table
+## Read the desktop table
 
-### Columns
+| Column | Meaning |
+| --- | --- |
+| Star | Add or remove a coin from your watchlist. |
+| Symbol | The coin or contract name. Check the full market symbol when comparing charts. |
+| Price | The latest available price in the app. |
+| Change % | The displayed 24-hour price change. |
+| P/WA | Price relative to its weighted average; above 1 means above that average, below 1 means below it. |
+| 24h Vol | Quoted trading volume over the 24-hour period, shown in USDT. |
 
-| Column | Description |
-|--------|-------------|
-| **Symbol** | Trading pair (e.g., BTCUSDT, ETHUSDT) |
-| **Price** | Current last-trade price |
-| **5m / 15m / 1h / 4h / 8h / 1d** | Price change % over each timeframe |
-| **Volume** | 24h quote volume in USDT |
-| **VCP** | Volatility Contraction Pattern score ([learn more](/features/indicators/vcp)) |
-| **Count** | Number of trades in the last 24h |
+P/WA is contextual information, not a buy/sell score. The change column is not the change of whichever candle timeframe you select on the chart.
 
-### Sorting
+## Search, sort and star
 
-Click any column header to sort by that column. Click again to reverse the sort order. The default sort is by 1h % change.
+Use the search box to narrow the list by symbol. Click a sortable column header to reverse its ordering. Starred coins appear in a separate group above other coins, with sorting applied within each group.
 
-### Search / filter
+Select a row to open the [chart](/features/charts). On mobile, the app may show compact cards and a details panel instead of the desktop layout.
 
-Use the search box above the table to filter by symbol name (e.g., type "BTC" to show only pairs containing "BTC").
+## Coverage and updates
 
-### Watchlist filter
+The selected market list changes over time. A coin can leave Market Coins while an earlier Dojo setup remains in [Dojo Zones](/features/dojo). A saved watchlist entry does not guarantee that coin is currently covered.
 
-Toggle the **Watchlist** switch to show only coins you've starred. See [Watchlist](/features/watchlist).
-
-## Timeframes
-
-All 6 timeframes are computed server-side from the continuous 1-minute candle stream:
-
-| Timeframe | Window |
-|-----------|--------|
-| 5m | Last 5 minutes |
-| 15m | Last 15 minutes |
-| 1h | Last 60 minutes |
-| 4h | Last 4 hours |
-| 8h | Last 8 hours |
-| 1d | Last 24 hours |
-
-The backend holds 1,440 candles (24 hours) per symbol and derives all windows in real time.
-
-## Data update rate
-
-The screener table updates every **5 seconds** from the backend REST API. Alert logic runs server-side in real time (within milliseconds of each new candle), but the table display polls every 5s.
-
-## Tracked pairs
-
-All **Binance Futures USDT perpetual pairs** that meet minimum liquidity thresholds. The exact set of tracked pairs is updated periodically. The screener currently tracks 200+ pairs.
-
-## Opening a chart
-
-Click any row to open the **chart modal** for that symbol. See [Charts](/features/charts).
-
-## Color coding
-
-- **Green** values: positive price change
-- **Red** values: negative price change
-- Rows flash briefly when a price updates
+Prices and statistics refresh periodically. A connected status does not prove every displayed value is fresh. If one symbol appears frozen, follow [chart troubleshooting](/troubleshooting#charts-and-prices).
