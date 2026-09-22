@@ -58,3 +58,25 @@
 .VPHero .tagline {
   font-size: 1.15rem;
 }
+
+/* Screenshots.
+   The app is dark and this site is read in both themes, so a shot needs an
+   edge of its own — without one it bleeds into a dark page and floats on a
+   light one. The caption is the line directly under the image. */
+.vp-doc img {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  display: block;
+  margin: 1.25rem auto 0.5rem;
+  max-width: 100%;
+}
+
+.vp-doc img + em,
+.vp-doc p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.85em;
+  font-style: normal;
+  color: var(--vp-c-text-2);
+  margin-bottom: 1.5rem;
+}

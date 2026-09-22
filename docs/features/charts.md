@@ -17,6 +17,10 @@ Charts open on **1D**. The buttons offer **1m, 5m, 15m, 1h, 4h and 1d**. Selecti
 
 Selecting a Dojo row shows the plan's zone, entry, stop and targets. Those levels belong to that selected setup; changing the chart interval does not generate a new plan.
 
+![A daily EDEN/USDT chart with the plan drawn on it: labelled price lines for TP3, TP2, TP1, zone top and entry, with interval buttons and an Alerts toggle above the chart and an alert timeline below it.](/img/app/chart-zone-overlay.png)
+
+*A selected plan drawn on the daily chart: its zone, entry and targets, with the **Alerts** toggle controlling markers.*
+
 The selected plan is kept in the page address, so a refresh returns to it and the link can be shared with someone who has access. Closing the chart clears that selection instead of reopening it on the next refresh.
 
 The standard chart does not automatically draw the separate TradingView Dojo indicators or a full Fibonacci pivot ladder. Those are different tools. See [Dojo Zones](/features/dojo) and [TradingView indicators](/tradingview/).

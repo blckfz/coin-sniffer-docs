@@ -37,6 +37,10 @@ Use credentials for a bot you control and a chat where it has permission to send
 
 Treat webhook URLs and bot tokens as credentials. Do not post them in public channels or include them in screenshots sent for support.
 
+![The New Webhook form with fields for name and type, a webhook URL box showing a Discord placeholder, a Watchlist alerts only checkbox, and Alert categories checkboxes for Momentum and Dojo with a note that nothing selected means the webhook receives every alert.](/img/app/settings-webhooks.png)
+
+*The destination form. Leaving both categories unticked delivers everything, rather than nothing.*
+
 ## Choose what gets delivered
 
 - **Momentum** includes the shorter-term market alert families.

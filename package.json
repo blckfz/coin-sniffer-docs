@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
-    "preview": "vitepress preview docs"
+    "preview": "vitepress preview docs",
+    "shots:login": "node tools/screenshots/capture.mjs --login",
+    "shots": "node tools/screenshots/capture.mjs",
+    "shots:optimise": "node tools/screenshots/optimise.mjs"
   },
   "devDependencies": {
+    "playwright": "^1.63.0",
     "vitepress": "^1.6.4"
   }
 }

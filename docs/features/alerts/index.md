@@ -22,11 +22,19 @@ The available presets in **Settings → Alert Rules** are the reference for your
 3. Configure **Sound Notifications** and **Browser Notifications** as needed.
 4. Use **Test Sound** to check audio. Allow browser notifications when prompted.
 
+![The Alert Rules tab in Settings, showing preset groups — Original Rules, Optimized V2 Rules and V4 Long-Bias Contrarian — each listing named alert types with on/off switches and a count of how many are enabled.](/img/app/settings-alert-rules.png)
+
+*Settings → Alert Rules. Each group shows how many of its types you have enabled.*
+
 Built-in alert selections sync with your account. Notification permissions and browser preferences can differ between devices. Keep the app open and connected for browser notifications; they are not a background push service after you close the app.
 
 ## Review history
 
 Open **Alert History** to see recent activity grouped by coin. Rows show alert badges, counts and the latest alert time. Select a row to inspect the chart and timeline; the chart's **Alerts** button controls markers.
+
+![The Alert History table with rows grouped by coin, each showing round alert-type badges, an alert count and the time of the latest alert; two rows also carry squared Dojo plan chips reading Waiting and In trade.](/img/app/alert-history-chips.png)
+
+*Alert badges record what fired. The squared chips below them are the coin's Dojo plans.*
 
 A coin with a Dojo plan also shows a separate line of plan chips — **Waiting**, **In trade**, or a recent **Target reached**, **Stop taken** or **Invalidated**. Selecting a chip, or a Dojo alert, opens that exact plan rather than only the coin. A coin whose plan is quietly waiting can appear with **–** instead of an alert count, because nothing fired. See [Plans in Alert History](/features/dojo#plans-in-alert-history).
 

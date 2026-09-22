@@ -11,6 +11,10 @@ Plans cover **1D, 5D and 1W**. New zones are normally checked daily; they are no
 3. Filter by timeframe and direction, or search for a symbol.
 4. Click a row to expand its plan and display its levels on the chart.
 
+![The Dojo Zones tab: a summary line reading 156 zones, 53 waiting, 9 open, 84 invalidated and a hit-target percentage, above the Live/Closed/All views, timeframe and direction filters, and a table of plans with entry, R:R, confluence, volume and status columns.](/img/app/dojo-table.png)
+
+*The summary counts every plan matching the timeframe and direction filters. The **Live**, **Closed** and **All** views change which rows are listed below it.*
+
 The chart opens on **1D** even for a 5D or 1W setup. The **TF** column describes the plan's timeframe.
 
 ## Read the plan
@@ -30,6 +34,10 @@ The chart opens on **1D** even for a 5D or 1W setup. The **TF** column describes
 | **Price when armed** | The historical price when the plan was published. |
 
 Expand the row for details that may be hidden in a narrow table. **Backed by** lists the supporting context displayed for the plan.
+
+![An expanded plan for EDENUSDT showing zone range, stop with its risk percentage, R:R to TP1, volume node, entry, three targets, price when armed and point of control, with a Backed by line listing a 1W 0.786 level and an FVG.](/img/app/dojo-plan-expanded.png)
+
+*The expanded plan. **Backed by** names the context the zone was published on — here a weekly fibonacci level and a fair value gap.*
 
 HVN indicates an area with relatively concentrated trading activity; LVN indicates a thinner area. **Point of control**, where shown, is a reference price associated with the greatest volume concentration. These labels describe context, not a promised reaction.
 
@@ -57,6 +65,10 @@ An invalidated zone was retired before price ever reached the entry, so no trade
 | **No current leg** | The symbol no longer produces a usable leg in that direction. |
 | **Expired** | Structurally intact, but old enough that the plan is no longer treated as active. |
 
+![A plan's timeline headed What has happened: Plan published on Sep 18 2026 as a 1D short with its entry, then Zone invalidated on Sep 19 2026, explained as a new swing confirming so the levels were measured from bars that no longer define the leg.](/img/app/dojo-timeline.png)
+
+*A zone retired before price reached it. The timeline names the reason rather than recording a loss.*
+
 An invalidated plan is not a loss. It is a plan that stopped being one; any resting order you placed on it is yours to cancel.
 
 ## Zone alerts are different events
@@ -71,6 +83,10 @@ A plan reports its whole life, not only its publication:
 - **Dojo Zone Invalidated (Long/Short)**: the zone was retired before the entry was ever reached, with a recorded reason. No trade is counted.
 
 A price move can reach the exact entry without a separate earlier zone-entered notification. Choose the published, zone-entered and entry-filled events you want under **Settings → Alert Rules**.
+
+![The Dojo Confluence Zones group in Settings, listing ten toggles: Dojo OTZ Long and Short for 1W, 5D and 1D, Dojo Zone Entered for long and short, and Dojo Entry Filled for long and short, all switched on.](/img/app/settings-dojo-rules.png)
+
+*The zone events you can switch on and off.*
 
 The three closing events — target, stop and invalidation — are delivered without a separate toggle in that list. They follow plans you have already been told about rather than adding new coins to watch.
 
@@ -101,6 +117,10 @@ Closing the chart clears the selected plan and removes it from the address.
 | **Target reached**, **Stop taken**, **Invalidated** | Recent alerts | The plan ended recently enough to appear in the alert window. |
 
 Each chip names the plan's timeframe and direction, and opens that exact plan. Beyond four chips the rest are counted as **+N more** rather than dropped; open **Dojo Zones** to see them all.
+
+![The Alert History table. Rows for AVAX and POPCAT carry a squared Dojo chip reading Waiting 5D Long and In trade 1D Long, on their own line under the round alert-type badges; ENA and ZEN each carry two Waiting chips for different timeframes.](/img/app/alert-history-chips.png)
+
+*Plan chips sit on their own line under the round alert badges. A coin can carry more than one plan.*
 
 These chips are separate from the round alert badges beside them. An alert badge records that something fired in the recent alert window; a plan chip is current state and stays for as long as the plan is in play, which for a weekly zone can be months.
 
