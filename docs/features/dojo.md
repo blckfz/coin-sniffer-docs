@@ -83,8 +83,8 @@ Select a Dojo alert to open the exact plan it refers to, rather than only the co
 Expand a plan to see **What has happened**: publication, entry reached, first target, stop, or invalidation, each with the date it was recorded.
 
 - A step that has not happened is shown as still open, not as failed. A zone price never reached is neither a win nor a loss.
-- Dates are recorded to the day, not to the minute.
-- Where a single eligible candle touched both the target and the stop, the record uses the stop.
+- A running trade is normally settled within minutes of the touch. An outcome that the minute check missed is settled by the daily pass instead and is dated to the day, so treat a date as the moment of record rather than an exact execution time.
+- Where a single candle touched both the target and the stop, the record uses the stop. A candle carries no ordering inside itself, and resolving it the other way would flatter every outcome drawn from it.
 
 The open plan is kept in the page address as a `setup` parameter, so it survives a refresh and the link can be shared with someone who has access. A plan that cannot be found is reported as missing; the app does not substitute another plan. That matters because one symbol often carries both a long and a short on different timeframes, and those are different plans with different levels.
 
@@ -108,9 +108,13 @@ A coin with a live plan but no alerts in the recent window still gets a row. Its
 
 ## Outcomes and timing
 
-Prices, arrival alerts and recorded outcomes do not all update together. Final outcomes are checked against confirmed daily candles, and the table refreshes periodically. A recent touch may therefore appear before the recorded status changes.
+Prices, arrival alerts and recorded outcomes do not all update together, and the table refreshes periodically. A recent touch may therefore appear before the recorded status changes.
 
-Daily candles do not reveal the order of every intraday move. If an eligible candle touches both stop and target and the order cannot be established, the record uses the conservative stopped outcome.
+Once a plan's entry has been reached, its target and stop are checked every minute against minute candles, so a trade that ends intraday is normally recorded and announced the same day rather than the next. A daily pass still replays the full candle history behind it. That pass is the backstop: if minute data was missing for a symbol, or the move is older than the recent window, the outcome is recorded later instead of never.
+
+A zone that has not yet been reached is a different case. It stays Waiting until price arrives, however long that takes, and it can be retired as Invalid in the meantime.
+
+Neither check can see the order of moves inside a single candle. Where one candle touches both stop and target, the record uses the conservative stopped outcome. This holds at both resolutions, though a one-minute candle containing both levels is rarer than a daily one.
 
 The summary counts every recorded setup matching the current timeframe and direction filters, not only the rows loaded in the table below. Its target percentage counts Target versus Stopped setups; Waiting, Open and Invalid setups are excluded, since no trade was won or lost. The **Live / Closed / All** view and a symbol search change which rows are visible, not the summary. While the counts are still loading the summary reads **counting zones…** rather than showing zeros.
 

@@ -22,7 +22,7 @@ Check that the crossing occurred after publication, that you selected the same s
 
 ## Am I told when a plan ends?
 
-Yes. A published plan also reports a target reached, a stop taken, or an invalidation before entry. Those describe the recorded plan, not your position or result, and are settled against confirmed daily candles rather than in real time. See [Dojo Zones](/features/dojo#zone-alerts-are-different-events).
+Yes. A published plan also reports a target reached, a stop taken, or an invalidation before entry. A running trade's target or stop is normally recorded within minutes of the touch, with a daily pass behind it for anything the minute check missed. These events describe the recorded plan, not your position or your result. See [Dojo Zones](/features/dojo#zone-alerts-are-different-events).
 
 ## Why does a coin have a Dojo plan but no Market Coins row?
 
