@@ -11,7 +11,7 @@ Alerts draw attention to market activity or a change in a Dojo setup. They do no
 | [Raid](/features/alerts/raids) | Potential reversals around a recent downward or upward move. |
 | [Whale](/features/alerts/whale) | Unusual volume activity and its directional context. |
 | [Catcher and contrarian](/features/alerts/catchers) | Long-bias monitoring around sharp sell-offs. |
-| [Dojo](/features/dojo#zone-alerts-are-different-events) | New zones, price entering a zone, and price reaching an entry. |
+| [Dojo](/features/dojo#zone-alerts-are-different-events) | New zones, price entering a zone, price reaching an entry, and how a plan ended. |
 
 The available presets in **Settings → Alert Rules** are the reference for your notification choices. A preset can exist without producing an alert in the current market conditions.
 
@@ -28,11 +28,13 @@ Built-in alert selections sync with your account. Notification permissions and b
 
 Open **Alert History** to see recent activity grouped by coin. Rows show alert badges, counts and the latest alert time. Select a row to inspect the chart and timeline; the chart's **Alerts** button controls markers.
 
+A coin with a Dojo plan also shows a separate line of plan chips — **Waiting**, **In trade**, or a recent **Target reached**, **Stop taken** or **Invalidated**. Selecting a chip, or a Dojo alert, opens that exact plan rather than only the coin. A coin whose plan is quietly waiting can appear with **–** instead of an alert count, because nothing fired. See [Plans in Alert History](/features/dojo#plans-in-alert-history).
+
 A live notification, a historical alert price and the coin's current price represent different moments. An old alert does not become a new setup because it remains visible in history.
 
 ## Presets and custom rules
 
-Built-in presets can be enabled or disabled; their detection criteria are not editable in the app. The **+ Custom Rule** form is not connected to live custom-alert evaluation in the current app. Do not rely on a saved custom rule to produce notifications.
+Built-in presets can be enabled or disabled; their detection criteria are not editable in the app. A Dojo plan's closing events — target reached, stop taken and invalidated — are delivered without their own toggle in this list; they follow plans already published rather than introducing new ones. The **+ Custom Rule** form is not connected to live custom-alert evaluation in the current app. Do not rely on a saved custom rule to produce notifications.
 
 ## Delivery outside the app
 

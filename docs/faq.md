@@ -20,6 +20,10 @@ No. It means the observed market price reached the plan's reference entry. Coin-
 
 Check that the crossing occurred after publication, that you selected the same symbol and setup, and that the exact entry was reached rather than only the zone boundary. Recorded status can lag the price. Earlier candles do not count as entries for a plan published later.
 
+## Am I told when a plan ends?
+
+Yes. A published plan also reports a target reached, a stop taken, or an invalidation before entry. Those describe the recorded plan, not your position or result, and are settled against confirmed daily candles rather than in real time. See [Dojo Zones](/features/dojo#zone-alerts-are-different-events).
+
 ## Why does a coin have a Dojo plan but no Market Coins row?
 
 The tracked market list changes while published plans remain in the setup history. Select the plan from Dojo Zones; some current statistics may be unavailable. Report a frozen chart or quote through Whop.

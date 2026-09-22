@@ -45,15 +45,66 @@ HVN indicates an area with relatively concentrated trading activity; LVN indicat
 
 **Live** includes Waiting and Open. **Closed** includes Target, Stopped and Invalid. **All** combines them within the history loaded by the app.
 
+### Why a zone is invalidated
+
+An invalidated zone was retired before price ever reached the entry, so no trade is counted either way. The recorded reason is shown with the plan:
+
+| Reason | Meaning |
+| --- | --- |
+| **Leg reanchored** | A new swing confirmed, so the levels were measured from bars that no longer define the move. |
+| **FVG mitigated** | The fair value gap that validated the zone has been filled. |
+| **Structure flipped** | Recorded market structure no longer agrees with the plan's direction. |
+| **No current leg** | The symbol no longer produces a usable leg in that direction. |
+| **Expired** | Structurally intact, but old enough that the plan is no longer treated as active. |
+
+An invalidated plan is not a loss. It is a plan that stopped being one; any resting order you placed on it is yours to cancel.
+
 ## Zone alerts are different events
+
+A plan reports its whole life, not only its publication:
 
 - **Dojo OTZ Long/Short 1D, 5D or 1W**: a new zone was published.
 - **Dojo Zone Entered**: price reached the zone area; it may not have reached the exact entry.
 - **Dojo Entry Filled**: observed price reached the plan's entry.
+- **Dojo Target Reached (Long/Short)**: the first target was recorded as reached from a filled entry. It does not describe TP2 or TP3.
+- **Dojo Stop Taken (Long/Short)**: the stop was recorded as reached from a filled entry.
+- **Dojo Zone Invalidated (Long/Short)**: the zone was retired before the entry was ever reached, with a recorded reason. No trade is counted.
 
-A price move can reach the exact entry without a separate earlier zone-entered notification. Choose the events you want under **Settings → Alert Rules**.
+A price move can reach the exact entry without a separate earlier zone-entered notification. Choose the published, zone-entered and entry-filled events you want under **Settings → Alert Rules**.
 
-**“Filled” is a market observation, not confirmation of your exchange order.** The app cannot see your orders, balances, position size or actual fills.
+The three closing events — target, stop and invalidation — are delivered without a separate toggle in that list. They follow plans you have already been told about rather than adding new coins to watch.
+
+**“Filled” is a market observation, not confirmation of your exchange order.** The app cannot see your orders, balances, position size or actual fills. A target or stop event describes the modelled plan, not your position, size or realised result.
+
+Select a Dojo alert to open the exact plan it refers to, rather than only the coin.
+
+## Follow one plan
+
+Expand a plan to see **What has happened**: publication, entry reached, first target, stop, or invalidation, each with the date it was recorded.
+
+- A step that has not happened is shown as still open, not as failed. A zone price never reached is neither a win nor a loss.
+- Dates are recorded to the day, not to the minute.
+- Where a single eligible candle touched both the target and the stop, the record uses the stop.
+
+The open plan is kept in the page address as a `setup` parameter, so it survives a refresh and the link can be shared with someone who has access. A plan that cannot be found is reported as missing; the app does not substitute another plan. That matters because one symbol often carries both a long and a short on different timeframes, and those are different plans with different levels.
+
+Closing the chart clears the selected plan and removes it from the address.
+
+## Plans in Alert History
+
+**Alert History** shows a Dojo line for any coin with a plan worth knowing about:
+
+| Chip | Source | Meaning |
+| --- | --- | --- |
+| **Waiting** | The plan record | Published, price has not reached the entry. |
+| **In trade** | The plan record | The entry was recorded as reached and the plan is running to its target or stop. |
+| **Target reached**, **Stop taken**, **Invalidated** | Recent alerts | The plan ended recently enough to appear in the alert window. |
+
+Each chip names the plan's timeframe and direction, and opens that exact plan. Beyond four chips the rest are counted as **+N more** rather than dropped; open **Dojo Zones** to see them all.
+
+These chips are separate from the round alert badges beside them. An alert badge records that something fired in the recent alert window; a plan chip is current state and stays for as long as the plan is in play, which for a weekly zone can be months.
+
+A coin with a live plan but no alerts in the recent window still gets a row. Its count reads **–** (**plan only** on mobile) instead of a number, because nothing fired, and its time comes from the plan's own latest recorded moment.
 
 ## Outcomes and timing
 
@@ -61,7 +112,9 @@ Prices, arrival alerts and recorded outcomes do not all update together. Final o
 
 Daily candles do not reveal the order of every intraday move. If an eligible candle touches both stop and target and the order cannot be established, the record uses the conservative stopped outcome.
 
-The summary's target percentage counts Target versus Stopped setups in the loaded results. Waiting, Open and Invalid setups are excluded. Timeframe and direction filters can change the loaded sample; a symbol search only narrows the visible rows. This is a record of modelled setup outcomes, not a complete account return, execution audit or guarantee of future results.
+The summary counts every recorded setup matching the current timeframe and direction filters, not only the rows loaded in the table below. Its target percentage counts Target versus Stopped setups; Waiting, Open and Invalid setups are excluded, since no trade was won or lost. The **Live / Closed / All** view and a symbol search change which rows are visible, not the summary. While the counts are still loading the summary reads **counting zones…** rather than showing zeros.
+
+This is a record of modelled setup outcomes, not a complete account return, execution audit or guarantee of future results.
 
 ## A coin disappeared from Market Coins
 

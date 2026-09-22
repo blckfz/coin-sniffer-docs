@@ -44,6 +44,10 @@ Try a private window with extensions disabled. Wallet-extension errors mentionin
 
 Clear the symbol search and check timeframe, direction and **Live / Closed / All** filters. A symbol may have no published setup, and an empty Live view can be normal. An explicit loading error is different from an empty result.
 
+### A plan link opens nothing
+
+A shared link carries one specific plan. If it reports the plan as missing, check that you are signed in with access and that the link was copied whole. The app does not substitute a different plan on the same symbol, because a symbol often carries both a long and a short on different timeframes.
+
 ### Price touched a level but status has not changed
 
 Check the exact entry and publication date. Entering the zone does not necessarily reach entry. Recorded outcomes and the table update separately from live prices; see [Dojo status and timing](/features/dojo#outcomes-and-timing).

@@ -16,11 +16,13 @@ Charts start on **1D**. Use the timeframe buttons to change resolution, and **Al
 
 Switch to **Alert History** to browse recent alerts grouped by coin. Search or sort the table, then select a row to inspect the coin's chart and alert timeline.
 
+A coin carrying a Dojo plan also shows a plan chip — **Waiting**, **In trade**, or a recent ending. Selecting a chip, or a Dojo alert, opens that plan directly.
+
 ## 4. Explore Dojo Zones
 
 Switch to **Dojo Zones**. The default **Live** view contains **Waiting** and **Open** setups. Use **Closed** for resolved or invalidated setups, or **All** to include both.
 
-Filter by **1D / 5D / 1W** and **Long / Short**. Select a row to expand the plan and draw its levels on the daily chart. Read [Dojo Zones](/features/dojo) before interpreting a status or outcome.
+Filter by **1D / 5D / 1W** and **Long / Short**. Select a row to expand the plan, draw its levels on the daily chart, and read **What has happened** — publication, entry, target, stop or invalidation, with the dates recorded. Read [Dojo Zones](/features/dojo) before interpreting a status or outcome.
 
 ## 5. Set your notifications
 

@@ -40,7 +40,7 @@ Treat webhook URLs and bot tokens as credentials. Do not post them in public cha
 ## Choose what gets delivered
 
 - **Momentum** includes the shorter-term market alert families.
-- **Dojo** includes zone publication and zone/entry events.
+- **Dojo** includes zone publication, zone/entry events, and a plan's closing events: target reached, stop taken and invalidated.
 - **No category selected means all categories**, not disabled delivery.
 - **Watchlist alerts only** additionally restricts the destination to your saved coins.
 
