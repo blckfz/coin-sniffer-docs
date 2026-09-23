@@ -9,7 +9,7 @@ Coin-Sniffer subscriptions are purchased and managed through Whop. The web app c
 | Monthly | $39.99 per month |
 | Yearly | $439.99 per year |
 
-The subscription includes the market dashboard, built-in alerts, charts, watchlist and Dojo Zones. Check the final price, trial eligibility and renewal terms at checkout before confirming; the checkout terms apply to your purchase.
+The subscription includes the market dashboard, built-in alerts, charts, watchlist and Dojo Zones. **Backed by**, **Volume** and **Point of control** — the fields describing how a zone was arrived at — are shown on Pro and admin accounts only. Check the final price, trial eligibility and renewal terms at checkout before confirming; the checkout terms apply to your purchase.
 
 Start from [Coin-Sniffer pricing](https://coin-sniffer.com/#pricing), or follow the plan selection screen after signing in.
 

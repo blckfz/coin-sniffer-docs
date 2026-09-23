@@ -15,7 +15,7 @@ Do not assume that no payment method is required or that every purchase qualifie
 
 ## What it covers
 
-An activated web app trial provides access to the screener, built-in alerts, charts, watchlist and Dojo Zones. It does not automatically include the separately sold TradingView scripts or Pro webhook delivery.
+An activated web app trial provides access to the screener, built-in alerts, charts, watchlist and Dojo Zones. It does not automatically include the separately sold TradingView scripts, Pro webhook delivery, or the Pro-only plan fields (**Backed by**, **Volume** and **Point of control**). Dojo plans themselves — zone, entry, stop, targets, R:R and the confluence rating — are included.
 
 ## Before it ends
 

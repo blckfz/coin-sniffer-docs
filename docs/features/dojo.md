@@ -29,17 +29,23 @@ The chart opens on **1D** even for a 5D or 1W setup. The **TF** column describes
 | **Targets** | TP1, TP2 and TP3 reference prices. |
 | **R:R** | The plan's reward-to-risk ratio to TP1. It does not include your trading costs or prove profitability. |
 | **Conf** | A relative confluence label: HIGH, MEDIUM or LOW. It is not a win probability. |
-| **Vol** | Volume context: HVN, LVN or a neutral label. A dash means unavailable, not zero volume. |
+| **Vol** | Volume context: HVN, LVN or a neutral label. A dash means unavailable, not zero volume. **Pro and admin accounts only** — the column is not shown on other plans. |
 | **Age** | Time since publication. |
 | **Price when armed** | The historical price when the plan was published. |
 
 Expand the row for details that may be hidden in a narrow table. **Backed by** lists the supporting context displayed for the plan.
 
+### What Pro adds
+
+**Backed by**, the **Volume** line and **Point of control** describe how a zone was arrived at, and are shown to **Pro and admin accounts**. Trial accounts do not include them.
+
+Everything else in the plan is on every subscription: the zone, entry, stop, three targets, R:R, age, status and the **Conf** rating. Conf tells you how strongly the zone was rated; the fields above are what it was rated on. Where they are not available the expanded plan says so rather than leaving a blank.
+
 ![An expanded plan for EDENUSDT showing zone range, stop with its risk percentage, R:R to TP1, volume node, entry, three targets, price when armed and point of control, with a Backed by line listing a 1W 0.786 level and an FVG.](/img/app/dojo-plan-expanded.png)
 
-*The expanded plan. **Backed by** names the context the zone was published on — here a weekly fibonacci level and a fair value gap.*
+*The expanded plan, as a Pro account sees it. **Backed by** names the context the zone was published on — here a weekly fibonacci level and a fair value gap.*
 
-HVN indicates an area with relatively concentrated trading activity; LVN indicates a thinner area. **Point of control**, where shown, is a reference price associated with the greatest volume concentration. These labels describe context, not a promised reaction.
+HVN indicates an area with relatively concentrated trading activity; LVN indicates a thinner area. **Point of control**, where shown, is a reference price associated with the greatest volume concentration. These labels describe context, not a promised reaction. Both are part of the Pro fields described above.
 
 ## Understand status
 

@@ -24,6 +24,10 @@ Check that the crossing occurred after publication, that you selected the same s
 
 Yes. A published plan also reports a target reached, a stop taken, or an invalidation before entry. A running trade's target or stop is normally recorded within minutes of the touch, with a daily pass behind it for anything the minute check missed. These events describe the recorded plan, not your position or your result. See [Dojo Zones](/features/dojo#zone-alerts-are-different-events).
 
+## Why can't I see Backed by, Volume or Point of control?
+
+Those three describe how a zone was arrived at and are shown on Pro and admin accounts; a trial does not include them. The plan itself — zone, entry, stop, three targets, R:R and the **Conf** rating — is on every subscription. See [Dojo Zones](/features/dojo#what-pro-adds).
+
 ## Why does a coin have a Dojo plan but no Market Coins row?
 
 The tracked market list changes while published plans remain in the setup history. Select the plan from Dojo Zones; some current statistics may be unavailable. Report a frozen chart or quote through Whop.
