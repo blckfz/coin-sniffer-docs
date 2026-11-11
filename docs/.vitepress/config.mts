@@ -4,6 +4,8 @@ export default defineConfig({
   title: 'Coin-Sniffer',
   description: 'User guides for Coin-Sniffer market alerts, charts, Dojo Zones and TradingView indicators.',
   lang: 'en-US',
+  // Writes sitemap.xml at build, so search engines find every guide page.
+  sitemap: { hostname: 'https://docs.coin-sniffer.com' },
   head: [
     ['meta', { name: 'theme-color', content: '#00d4aa' }],
     ['meta', { property: 'og:type', content: 'website' }],
