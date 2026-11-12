@@ -54,7 +54,15 @@ No universal one-minute rule applies to the Dojo indicators. Follow the instruct
 
 ## Does signup automatically start a free trial?
 
-No. Verify your account and activate access through checkout. The app advertises an eligible seven-day trial; checkout determines availability, payment requirements and renewal terms. See [Trial access](/billing/trial).
+No. Signing up gives you a [free account](/features/free-account): the zones without their prices, one zone a week in full, and the record. The trial of the full product starts at checkout. The app advertises an eligible seven-day trial; checkout determines availability, payment requirements and renewal terms. See [Trial access](/billing/trial).
+
+## What does a free account include?
+
+Every zone in play with its coin, timeframe, direction, R:R and rating but without entry, stop or targets; one zone a week shown in full; the record of every zone that has ended; and an optional daily email. It does not include the momentum alerts or the live dashboard. See [Free account](/features/free-account).
+
+## How do I stop the daily email?
+
+Use the **unsubscribe** link at the bottom of any daily email, or switch **Daily scan by email** off in your account. Nothing else about the account changes.
 
 ## How do I cancel or get billing help?
 

@@ -18,6 +18,7 @@ Start from [Coin-Sniffer pricing](https://coin-sniffer.com/#pricing), or follow 
 | Product or feature | Access |
 | --- | --- |
 | Public preview | Available without signing in; selected symbols and restricted active-plan details. |
+| [Free account](/features/free-account) | An email address, no card. Zones in play without their prices, one zone a week in full, the record of ended zones, and an optional daily email. |
 | TradingView Dojo indicators | Sold separately and invite-only. Check the indicator offer for included scripts and current pricing. |
 | Community webhooks | Pro feature, negotiated and priced separately. Requires an active subscription and Pro enabled. |
 

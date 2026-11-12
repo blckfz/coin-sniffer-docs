@@ -4,13 +4,15 @@
 
 1. Open [Sign up](https://coin-sniffer.com/signup).
 2. Enter your email, choose a password of at least eight characters, and confirm it.
-3. Review and accept the Terms of Service and Privacy Policy, then select **Create Account**.
-4. Check your inbox and follow the confirmation link. Registration alone does not sign you in or unlock the app.
-5. Continue to the app and choose a plan if you do not already have access.
+3. Review and accept the Terms of Service and Privacy Policy. Optionally tick **Email me the daily scan**. Then select **Create Account**.
+4. Check your inbox and follow the confirmation link. Registration alone does not sign you in.
+5. Confirming the address signs you in to the [free view](/features/free-account). No card is needed for it.
 
 The confirmation link expires after 24 hours. If it is missing or expired, check spam and request another from the [sign-in page](https://coin-sniffer.com/login).
 
-## Start access through Whop
+## Start a subscription through Whop
+
+A free account shows the zones without their prices, one zone a week in full, and the record. The levels for every zone, the momentum alerts and the live dashboard are part of a subscription.
 
 Subscription and eligible trial checkout runs through Whop. Review the trial, payment and renewal terms shown at checkout before confirming. Creating an account does not automatically start a seven-day trial.
 
